@@ -20,3 +20,6 @@ function citySearch (keyword) {
 }
 
 app.listen(3000);
+
+//to access the city name submitted by the user
+//request.params.name
