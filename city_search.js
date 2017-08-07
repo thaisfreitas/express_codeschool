@@ -23,3 +23,27 @@ app.listen(3000);
 
 //to access the city name submitted by the user
 //request.params.name
+
+//city info
+var express = require('express');
+var app = express();
+
+var cities = {
+  'Lotopia': 'Rough and mountainous',
+  'Caspiana': 'Sky-top island',
+  'Indigo': 'Vibrant and thriving',
+  'Paradise': 'Lush, green plantation',
+  'Flotilla': 'Bustling urban oasis'
+};
+
+app.get('/cities/:name', function (request, response) {
+  var cityInfo = cities[request.params.name];
+  if(cityInfo) {
+    response.json(cityInfo);
+  } else {
+    response.status(404);
+    response.json("City not found");
+  }
+});
+
+app.listen(3000);
