@@ -15,3 +15,16 @@ app.get('/locations', function(request, response) {
 app.listen(3001, function() {
   console.log('Running Express');
 });
+
+//level 2 - express static
+var express = require('express');
+var app = express();
+
+app.use(express.static('public'));
+
+app.get('/cities', function(req, res){
+  var cities = ['Lotopia', 'Caspiana', 'Indigo'];
+  res.send(cities);
+});
+
+app.listen(3001);
