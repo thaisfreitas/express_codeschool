@@ -24,7 +24,6 @@ app.delete('/cities/:name', function(request, response) {
   }
 });
 
-
 app.listen(3000);
 
 function parseCityName(name) {
